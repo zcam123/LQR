@@ -73,4 +73,6 @@ end
 zs, us = control(10^5, 0.2, zeros(4), A, B, K)
 
 zDs = [0.2 for _ in 1:10^5]
-plot([zs, zDs])
+p1 = plot([zs, zDs], label=["firing rate" "reference"])
+p2 = plot(us, label="u")
+plot(p1, p2, layout=[1,1])
